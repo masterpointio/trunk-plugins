@@ -10,8 +10,8 @@ lint:
           output: pass_fail
           success_codes: [0, 1]
           read_output_from: stderr
-          run: terraform-docs . -c ${workspace}/.trunk/configs/.terraform-docs.yml --output-check
-          run_from: ${target_directory}
+          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml --output-check
+          # run_from:
           target: ${parent}
         - name: generate
           files: [terraform]
