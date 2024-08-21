@@ -26,6 +26,6 @@ lint:
   exported_configs:
     - configs:
         - configs/.terraform-docs.yaml
-tools:
-  enabled:
-    - terraform-docs@0.18.0
+# tools:
+#   enabled:
+#     - terraform-docs@0.18.0
