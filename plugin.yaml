@@ -12,7 +12,7 @@ lint:
           read_output_from: stderr
           run: terraform-docs . -c ${workspace}/.trunk/configs/.terraform-docs.yml --output-check
           run_from: ${target_directory}
-          target: "${parent}/README.md"
+          target: ${parent}
         - name: generate
           files: [terraform]
           output: pass_fail
