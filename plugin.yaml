@@ -13,21 +13,24 @@ lint:
           run: terraform-docs . -c ${workspace}/.trunk/configs/.terraform-docs.yml --output-check
           run_from: ${target_directory}
           target: "${parent}/README.md"
-        # - name: generate
-        #   files: [terraform]
-        #   output: pass_fail
-        #   success_codes: [0, 1]
-        #   formatter: true
-        #   read_output_from: stdout
-        #   run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml --output-file ${tmpfile}
-        #   run_from: ${target_directory}
-        #   target: ${parent}
-        #   in_place: true
+        - name: generate
+          files: [terraform]
+          output: pass_fail
+          success_codes: [0, 1]
+          formatter: true
+          read_output_from: stdout
+          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml
+          run_from: ${target_directory}
+          target: ${parent}
+          in_place: true
       tools:
         - terraform-docs
   exported_configs:
     - configs:
         - configs/.terraform-docs.yaml
+    - terraform-docs:
+        - terraform-docs-elements/header.md
+        - terraform-docs-elements/footer.md
 # tools:
 #   enabled:
 #     - terraform-docs@0.18.0
