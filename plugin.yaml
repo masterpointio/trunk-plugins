@@ -10,7 +10,7 @@ lint:
           output: pass_fail
           success_codes: [0, 1]
           read_output_from: stderr
-          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml --output-check --header-from ${plugin}/terraform-docs-elements/header.md --footer-from ${plugin}/terraform-docs-elements/footer.md
+          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml --output-check --header-from /${plugin}/terraform-docs-elements/header.md --footer-from /${plugin}/terraform-docs-elements/footer.md
           run_from: ${parent}
           target: ${parent}
         - name: generate
@@ -19,7 +19,7 @@ lint:
           success_codes: [0, 1]
           formatter: true
           read_output_from: stderr
-          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml  --header-from ${plugin}/terraform-docs-elements/header.md --footer-from ${plugin}/terraform-docs-elements/footer.md
+          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml  --header-from /${plugin}/terraform-docs-elements/header.md --footer-from /${plugin}/terraform-docs-elements/footer.md
           run_from: ${target_directory}
           target: ${parent}
           # in_place: true
