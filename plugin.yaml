@@ -22,7 +22,7 @@ lint:
           run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml
           # run_from: ${target_directory}
           target: ${parent}
-          # in_place: true
+          in_place: true
       tools:
         - terraform-docs
   exported_configs:
