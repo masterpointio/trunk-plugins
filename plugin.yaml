@@ -28,7 +28,6 @@ lint:
   exported_configs:
     - configs:
         - configs/.terraform-docs.yaml
-    - terraform-docs:
         - terraform-docs-elements/header.md
         - terraform-docs-elements/footer.md
 # tools:
