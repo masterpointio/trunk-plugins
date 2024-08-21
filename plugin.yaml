@@ -5,18 +5,17 @@ lint:
       files: [terraform]
 
       commands:
-        # - name: check
-        #   files: [terraform]
-        #   run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml --output-check
-        #   read_output_from: stderr
-        #   success_codes: [0, 1]
-        #   output: pass_fail
-        #   target: ${parent}
+        - name: check
+          files: [terraform]
+          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml --output-check
+          read_output_from: stderr
+          success_codes: [0, 1]
+          output: pass_fail
+          target: ${parent}
 
         - name: generate
           files: [terraform]
           formatter: true
-          # in_place: true
           run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml
           success_codes: [0, 1]
           output: pass_fail
