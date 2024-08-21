@@ -20,7 +20,7 @@ lint:
           formatter: true
           read_output_from: stdout
           run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml
-          run_from: ${target_directory}
+          # run_from: ${target_directory}
           target: ${parent}
           in_place: true
       tools:
