@@ -16,7 +16,7 @@ lint:
         - name: generate
           files: [terraform]
           formatter: true
-          in_place: true
+          # in_place: true
           run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml
           success_codes: [0, 1]
           output: pass_fail
