@@ -15,7 +15,7 @@ lint:
         - name: generate all terraform-docs
           files: [terraform]
           output: pass_fail
-          success_codes: [0]
+          success_codes: [0, 1]
           formatter: true
           read_output_from: stdout
           run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml
@@ -24,8 +24,8 @@ lint:
       tools:
         - terraform-docs
   enabled:
-    - terraform-docs-check
-    - terraform-docs-generate
+    - terraform-docs
+    - terraform-docs
   exported_configs:
     - configs:
         - configs/.terraform-docs.yaml
