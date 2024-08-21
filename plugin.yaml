@@ -23,9 +23,6 @@ lint:
           target: ${parent}
       tools:
         - terraform-docs
-  enabled:
-    - terraform-docs
-    - terraform-docs
   exported_configs:
     - configs:
         - configs/.terraform-docs.yaml
