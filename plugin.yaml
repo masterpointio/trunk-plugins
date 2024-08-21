@@ -7,22 +7,21 @@ lint:
       commands:
         - name: check
           files: [terraform]
-          output: pass_fail
-          success_codes: [0, 1]
+          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml --output-check
           read_output_from: stderr
-          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml --output-check --header-from /${plugin}/terraform-docs-elements/header.md --footer-from /${plugin}/terraform-docs-elements/footer.md
-          # run_from: ${parent}
+          success_codes: [0, 1]
+          output: pass_fail
           target: ${parent}
+
         - name: generate
           files: [terraform]
-          output: pass_fail
-          success_codes: [0, 1]
           formatter: true
+          in_place: true
+          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml
+          success_codes: [0, 1]
+          output: pass_fail
           read_output_from: stderr
-          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml  --header-from /${plugin}/terraform-docs-elements/header.md --footer-from /${plugin}/terraform-docs-elements/footer.md
-          # run_from: ${target_directory}
           target: ${parent}
-          # in_place: true
       tools:
         - terraform-docs
   exported_configs:
@@ -30,6 +29,3 @@ lint:
         - configs/.terraform-docs.yaml
         - terraform-docs-elements/header.md
         - terraform-docs-elements/footer.md
-# tools:
-#   enabled:
-#     - terraform-docs@0.18.0
