@@ -14,6 +14,7 @@ lint:
           target: ${parent}
 
         - name: generate
+          enabled: false # Disabled because we seemingly cannot edit the file in place without conflicting with other linters.
           files: [terraform]
           formatter: true
           in_place: true
@@ -39,4 +40,4 @@ lint:
 actions:
   definitions:
     - id: generate-terraform-docs
-      run: .trunk/tools/terraform-docs -c ${workspace}/.trunk/configs/.terraform-docs.yaml --recursive
+      run: .trunk/tools/terraform-docs -c ${workspace}/.trunk/configs/.terraform-docs.yaml --recursive .
