@@ -35,3 +35,8 @@ lint:
         - configs/.terraform-docs.yaml
         - terraform-docs-elements/header.md
         - terraform-docs-elements/footer.md
+
+actions:
+  definitions:
+    - id: generate-terraform-docs
+      run: terraform-docs -c ${workspace}/,trunk/configs/.terraform-docs.yaml --recursive
