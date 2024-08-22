@@ -8,7 +8,7 @@ lint:
         - name: check
           disable_upstream: true
           files: [terraform]
-          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml --output-check
+          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yaml --output-check
           read_output_from: stderr
           success_codes: [0, 1]
           output: pass_fail
@@ -19,7 +19,7 @@ lint:
           files: [terraform]
           formatter: true
           in_place: true
-          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml
+          run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yaml
           success_codes: [0, 1]
           output: pass_fail
           read_output_from: stderr
