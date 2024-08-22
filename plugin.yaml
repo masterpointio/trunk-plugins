@@ -6,6 +6,7 @@ lint:
 
       commands:
         - name: check
+          disable_upstream: true
           files: [terraform]
           run: terraform-docs ${target} -c ${workspace}/.trunk/configs/.terraform-docs.yml --output-check
           read_output_from: stderr
