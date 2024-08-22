@@ -25,7 +25,7 @@ lint:
           read_output_from: stderr
           target: ${parent}
       direct_configs:
-        - configs/.terraform-docs.yml
+        - configs/.terraform-docs.yaml
       suggest_if: files_present
       tools:
         - terraform-docs
