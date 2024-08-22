@@ -39,4 +39,4 @@ lint:
 actions:
   definitions:
     - id: generate-terraform-docs
-      run: terraform-docs -c ${workspace}/,trunk/configs/.terraform-docs.yaml --recursive
+      run: .trunk/tools/terraform-docs -c ${workspace}/.trunk/configs/.terraform-docs.yaml --recursive
